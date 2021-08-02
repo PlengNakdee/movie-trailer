@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
@@ -6,11 +7,15 @@ export default function Home() {
       <Head>
         <title>Movie App</title>
         <meta name="description" content="" />
-        <link rel="icon" href="" />
+        <link rel="icon" href="clone.png" />
       </Head>
-
       <div>
-        <p>Hello</p>
+        <Header />
+        <p className='font-extrabold'>Image Banner</p>
+        <p>Images card row</p>
+        <p>Images card row</p>
+        <p>Images card row</p>
+        <p>footer</p>
       </div>
     </div>
   )
