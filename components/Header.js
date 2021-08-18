@@ -3,9 +3,9 @@ import { Link } from "react-scroll";
 
 const Header = () => {
     return (
-        <header className="flex p-4 items-center">
-            <div className="flex flex-grow space-x-4 w-full">
-                <img src="img/clone.png" className="h-10 sm:h-20"></img>
+        <header className="w-full">
+            <div className="flex space-x-4 p-4 items-center">
+                <img src="img/clone.png" className="h-10 flex-grow sm:h-20"></img>
                 <div className="space-x-4">
                 <Link to="1">
                     <button>Recent</button>

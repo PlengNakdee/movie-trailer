@@ -1,11 +1,11 @@
 import { PlayIcon } from "@heroicons/react/solid";
 
-const ImageBanner = () => {
+const ImageBanner = ({poster}) => {
     return (
         <div>
             <div className="">
                 <figure className="">
-                    <img className="" src="img/Intersteller.jpeg" />
+                    <img className="object-cover" src={poster} />
                     <figcaption className="absolute -mt-24 ml-4 sm:-mt-80 sm:ml-10 space-y-2">
                         <div className="">
                             <p className="text-white text-lg sm:text-5xl">Title</p>
