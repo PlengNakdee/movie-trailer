@@ -49,6 +49,11 @@ export default {
       },
     },
     {
+      name: 'banner',
+      title: 'Banner Image',
+      type: 'image',
+    },
+    {
       name: 'castMembers',
       title: 'Cast Members',
       type: 'array',

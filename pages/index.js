@@ -20,20 +20,20 @@ const Home = ({dataset}) => {
             <Header />
           </div>
           <div className="">
-            <ImageBanner poster={"img/Intersteller.jpeg"}/>
+            <ImageBanner poster={dataset[3].banner}/>
           </div>       
         </div>
         <div className="pl-6 z-10">
           <div id="1" className="bg-black">
-            <p>Recent</p>
+            <p className="text-2xl">Recent</p>
             <Carousal poster1={dataset[nums[1]].poster} poster2={dataset[nums[2]].poster} poster3={dataset[nums[3]].poster} poster4={dataset[nums[4]].poster} poster5={dataset[nums[5]].poster} poster6={dataset[nums[6]].poster}/>
           </div>
           <div id="2">
-            <p>Top Rated</p>
+            <p className="text-2xl">Top Rated</p>
             <Carousal poster1={dataset[nums[7]].poster} poster2={dataset[nums[8]].poster} poster3={dataset[nums[9]].poster} poster4={dataset[nums[10]].poster} poster5={dataset[nums[11]].poster} poster6={dataset[nums[12]].poster}/>
           </div>
           <div id="3">
-            <p>Trending Now</p>
+            <p className="text-2xl">Trending Now</p>
             <Carousal poster1={dataset[nums[2]].poster} poster2={dataset[nums[4]].poster} poster3={dataset[nums[6]].poster} poster4={dataset[nums[9]].poster} poster5={dataset[nums[10]].poster} poster6={dataset[nums[0]].poster}/>
           </div>
         </div>
