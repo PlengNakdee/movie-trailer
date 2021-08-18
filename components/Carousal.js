@@ -19,8 +19,14 @@ SwiperCore.use([Pagination, Navigation]);
 export default function Carousal() {
   return (
     <>
-    <Swiper slidesPerView={4} spaceBetween={10} centeredSlides={false} navigation={true}  className="" style={{ '--swiper-navigation-color': 'white' }}>
-  <SwiperSlide>Slide 1</SwiperSlide><SwiperSlide>Slide 2</SwiperSlide><SwiperSlide>Slide 3</SwiperSlide><SwiperSlide>Slide 4</SwiperSlide><SwiperSlide>Slide 5</SwiperSlide><SwiperSlide>Slide 6</SwiperSlide><SwiperSlide>Slide 7</SwiperSlide><SwiperSlide>Slide 8</SwiperSlide><SwiperSlide>Slide 9</SwiperSlide>
+    <Swiper slidesPerView={3} spaceBetween={12} centeredSlides={false} navigation={true}  className="" style={{ '--swiper-navigation-color': 'white' }}>
+  <SwiperSlide><a><img className="rounded-md" src={"/img/Intersteller.jpeg"}></img></a></SwiperSlide>
+  <SwiperSlide><img className="rounded-md" src={"/img/Intersteller.jpeg"}></img></SwiperSlide>
+  <SwiperSlide><img className="rounded-md" src={"/img/Intersteller.jpeg"}></img></SwiperSlide>
+  <SwiperSlide><img className="rounded-md" src={"/img/Intersteller.jpeg"}></img></SwiperSlide>
+  <SwiperSlide><img className="rounded-md" src={"/img/Intersteller.jpeg"}></img></SwiperSlide>
+  <SwiperSlide><img className="rounded-md" src={"/img/Intersteller.jpeg"}></img></SwiperSlide>
+  <SwiperSlide><img className="rounded-md" src={"/img/Intersteller.jpeg"}></img></SwiperSlide>
   </Swiper>
     </>
   )
