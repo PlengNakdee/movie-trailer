@@ -1,9 +1,17 @@
 // import { UserCircleIcon } from "@heroicons/react/solid";
 import { Link } from "react-scroll";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+    const [scroll, setScroll] = useState(false);
+
+    useEffect(() => {
+      window.addEventListener("scroll", () => {
+        setScroll(window.scrollY > 10);
+      });
+    }, []); 
     return (
-        <div className="fixed z-20 w-full">
+        <div className={`fixed z-20 w-full ${scroll ? "bg-black" : "bg-none"}`}>
             <div className="flex space-x-4 p-4 items-center">
                 <img src="img/clone.png" className="h-10 sm:h-14"></img>
                 <div className="space-x-4">
