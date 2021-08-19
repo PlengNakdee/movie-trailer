@@ -15,18 +15,12 @@ const Home = ({dataset}) => {
         <link rel="icon" href="clone.png" />
       </Head>
       <div>
-        <div className="">
-          <div className="fixed">
-            <Header />
-          </div>
-          <div className="">
-            <ImageBanner poster={dataset[3].banner}/>
-          </div>       
-        </div>
+        <Header />
+        <ImageBanner poster={dataset[nums[0]].banner}/>     
         <div className="pl-6 z-10">
           <div id="1" className="bg-black">
             <p className="text-2xl">Recent</p>
-            <Carousal poster1={dataset[nums[1]].poster} poster2={dataset[nums[2]].poster} poster3={dataset[nums[3]].poster} poster4={dataset[nums[4]].poster} poster5={dataset[nums[5]].poster} poster6={dataset[nums[6]].poster}/>
+            <Carousal poster1={dataset[nums[0]].poster} poster2={dataset[nums[2]].poster} poster3={dataset[nums[3]].poster} poster4={dataset[nums[4]].poster} poster5={dataset[nums[5]].poster} poster6={dataset[nums[6]].poster}/>
           </div>
           <div id="2">
             <p className="text-2xl">Top Rated</p>
@@ -34,7 +28,7 @@ const Home = ({dataset}) => {
           </div>
           <div id="3">
             <p className="text-2xl">Trending Now</p>
-            <Carousal poster1={dataset[nums[2]].poster} poster2={dataset[nums[4]].poster} poster3={dataset[nums[6]].poster} poster4={dataset[nums[9]].poster} poster5={dataset[nums[10]].poster} poster6={dataset[nums[0]].poster}/>
+            <Carousal poster1={dataset[nums[2]].poster} poster2={dataset[nums[4]].poster} poster3={dataset[nums[6]].poster} poster4={dataset[nums[9]].poster} poster5={dataset[nums[10]].poster} poster6={dataset[nums[1]].poster}/>
           </div>
         </div>
         <div className="pt-4 border-b-2 border-white">
