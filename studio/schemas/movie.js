@@ -54,6 +54,11 @@ export default {
       type: 'image',
     },
     {
+      name: 'youtubeId',
+      title: 'YoutubeId',
+      type: 'string',
+    },
+    {
       name: 'castMembers',
       title: 'Cast Members',
       type: 'array',

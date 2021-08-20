@@ -17,7 +17,7 @@ const Home = ({dataset}) => {
       <div>
         <Header />
         <ImageBanner poster={dataset[nums[0]].banner}/>     
-        <div className="pl-6 z-10">
+        <div className="pl-6 space-y-4">
           <div id="1" className="bg-black">
             <p className="text-2xl">Recent</p>
             <Carousal poster1={dataset[nums[0]].poster} poster2={dataset[nums[2]].poster} poster3={dataset[nums[3]].poster} poster4={dataset[nums[4]].poster} poster5={dataset[nums[5]].poster} poster6={dataset[nums[6]].poster}/>
