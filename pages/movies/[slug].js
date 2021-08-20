@@ -1,8 +1,20 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import YoutubeEmbed from "../../components/YoutubeEmbed";
+import { getAllSlugs } from "../../sanity_api/api";
+import sanity from "../../sanity_api/sanity";
+import BlockContent from '@sanity/block-content-to-react'
 
-const Movie = () => {
+const Movie = ({movie}) => {
+    const serializer = {
+        types: {
+          code: (props) => (
+            <pre data-language={props.node.language}>
+              <code>{props.node.code}</code>
+            </pre>
+          ),
+        },
+      }
   return (
     <div className="min-h-screen bg-black text-white 2xl:max-w-7xl 2xl:mx-auto">
       <div>
@@ -10,19 +22,15 @@ const Movie = () => {
         <div className="p-20">
           <div className="grid justify-items-center space-y-10">
             <div classsName="space-y-4">
-              <p className="text-xl font-bold">WALL·E (2008)</p>
+                {/* add year */}
+              <p className="text-xl font-bold">{movie.title}</p>
               <div className="relative pt-8 pb-20 sm:pb-96">
-              <YoutubeEmbed embedId="rokGy0huYEA" />
+                <YoutubeEmbed embedId={movie.youtubeId} />
               </div>
-              <p className="pt-24">
-                WALL·E is the last robot left on an Earth that has been overrun
-                with garbage and all humans have fled to outer space. For 700
-                years he has continued to try and clean up the mess, but has
-                developed some rather interesting human-like qualities. When a
-                ship arrives with a sleek new type of robot, WALL·E thinks he's
-                finally found a friend and stows away on the ship when it
-                leaves.
-              </p>
+              <div className="pt-20">
+              <BlockContent blocks={movie.overview} serializers={serializer} />
+              </div>
+              
             </div>
             <div className="flex space-x-4">
               <a href="/">WALL·E</a>
@@ -41,3 +49,27 @@ const Movie = () => {
 };
 
 export default Movie;
+
+export const getStaticPaths = async () => {
+  const slugData = await getAllSlugs();
+  const paths = slugData.map((page) => {
+    return { params: { slug: page.slug } };
+  });
+  return {
+      paths,
+      fallback: false
+  }
+};
+
+const singlePageQuery = `*[_type == "movie" && slug == $slug] {
+    "id": _id,
+    title,
+    overview,
+    youtubeId,
+    slug,
+}[0]`;
+
+export const getStaticProps = async ({ params }) => {
+  const movie = await sanity.fetch(singlePageQuery, { slug: params.slug});
+  return { props: { movie } };
+};

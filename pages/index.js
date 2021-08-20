@@ -16,11 +16,17 @@ const Home = ({dataset}) => {
       </Head>
       <div>
         <Header />
-        <ImageBanner poster={dataset[nums[0]].banner}/>     
+        <a href={`/movies/${dataset[nums[0]].slug}`}>
+        <ImageBanner poster={dataset[nums[0]].banner}/></a>    
         <div className="pl-6 space-y-4">
           <div id="1" className="bg-black">
             <p className="text-2xl">Recent</p>
-            <Carousal poster1={dataset[nums[0]].poster} poster2={dataset[nums[2]].poster} poster3={dataset[nums[3]].poster} poster4={dataset[nums[4]].poster} poster5={dataset[nums[5]].poster} poster6={dataset[nums[6]].poster}/>
+            <Carousal poster1={dataset[nums[0]].poster} url1={`/movies/${dataset[nums[0]].slug}`} 
+            poster2={dataset[nums[2]].poster} 
+            poster3={dataset[nums[3]].poster} 
+            poster4={dataset[nums[4]].poster} 
+            poster5={dataset[nums[5]].poster} 
+            poster6={dataset[nums[6]].poster}/>
           </div>
           <div id="2">
             <p className="text-2xl">Top Rated</p>

@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <div className={`fixed z-20 w-full ${scroll ? "bg-black" : "bg-none"}`}>
             <div className="flex space-x-4 p-4 items-center">
-                <img src="/img/clone.png" className="h-10 sm:h-14"></img>
+                <a href="/"><img src="/img/clone.png" className="h-10 sm:h-14"></img></a>
                 <div className="space-x-4">
                 <Link to="1">
                     <button>Recent</button>

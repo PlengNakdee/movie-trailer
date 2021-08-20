@@ -16,11 +16,11 @@ import SwiperCore, {
 SwiperCore.use([Pagination, Navigation]);
 
 
-export default function Carousal({poster1, poster2, poster3, poster4, poster5, poster6}) {
+export default function Carousal({poster1, poster2, poster3, poster4, poster5, poster6, url1}) {
   return (
     <>
     <Swiper slidesPerView={3} spaceBetween={12} centeredSlides={false} navigation={true}  className="" style={{ '--swiper-navigation-color': 'white' }}>
-  <SwiperSlide><a><img className="rounded-md" src={poster1}></img></a></SwiperSlide>
+  <SwiperSlide><a href={url1}><img className="rounded-md" src={poster1}></img></a></SwiperSlide>
   <SwiperSlide><img className="rounded-md" src={poster2}></img></SwiperSlide>
   <SwiperSlide><img className="rounded-md" src={poster3}></img></SwiperSlide>
   <SwiperSlide><img className="rounded-md" src={poster4}></img></SwiperSlide>
