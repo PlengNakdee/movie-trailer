@@ -4,6 +4,7 @@ import YoutubeEmbed from "../../components/YoutubeEmbed";
 import { getAllSlugs } from "../../sanity_api/api";
 import sanity from "../../sanity_api/sanity";
 import BlockContent from '@sanity/block-content-to-react'
+import OtherTitles from "../../components/OtherTitles";
 
 const Movie = ({movie}) => {
     const serializer = {
@@ -27,17 +28,12 @@ const Movie = ({movie}) => {
               <div className="relative pt-8 pb-20 sm:pb-96">
                 <YoutubeEmbed embedId={movie.youtubeId} />
               </div>
-              <div className="pt-20">
+              <div className="pt-28">
               <BlockContent blocks={movie.overview} serializers={serializer} />
               </div>
               
             </div>
-            <div className="flex space-x-4">
-              <a href="/">WALL·E</a>
-              <a href="/">WALL·E</a>
-              <a href="/">WALL·E</a>
-              <a href="/">WALL·E</a>
-            </div>
+            <OtherTitles />
           </div>
         </div>
       </div>

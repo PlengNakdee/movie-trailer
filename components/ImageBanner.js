@@ -4,7 +4,7 @@ const ImageBanner = ({poster}) => {
     return (
         <div>
             <div className="">
-            <img className="object-cover" src={poster} />
+            <img className="object-cover mx-auto" src={poster} />
                 {/* <figure className="">
                     <figcaption className="absolute -mt-24 ml-4 sm:-mt-80 sm:ml-10 space-y-2">
                         <div className="">
