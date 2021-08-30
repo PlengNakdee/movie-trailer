@@ -11,14 +11,19 @@ export default {
       title: 'Title',
       type: 'string',
     },
+    // {
+    //   name: 'slug',
+    //   title: 'Slug',
+    //   type: 'slug',
+    //   options: {
+    //     source: 'title',
+    //     maxLength: 100,
+    //   },
+    // },
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 100,
-      },
+      type: 'string',
     },
     {
       name: 'overview',
@@ -47,6 +52,16 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: 'banner',
+      title: 'Banner Image',
+      type: 'image',
+    },
+    {
+      name: 'youtubeId',
+      title: 'YoutubeId',
+      type: 'string',
     },
     {
       name: 'castMembers',
