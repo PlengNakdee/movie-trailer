@@ -1,10 +1,10 @@
-const OtherTitles = (url1, url2, url3, url4, num1, num2, num3, num4) => {
+const OtherTitles = (url1, url2, url3, url4, title1, num2, num3, num4) => {
   return (
     <div className="grid justify-items-center">
       <p className="text-lg font-bold">Recommendations: </p>
-      <div className="flex space-x-4 font-semibold">
+      <div className="flex space-x-4 font-semibold text-white">
         <a href={url1} className="hover:text-red-500">
-            {num1}
+          {title1}
         </a>
         <span>|</span>
         <a href={url2} className="hover:text-red-500">
