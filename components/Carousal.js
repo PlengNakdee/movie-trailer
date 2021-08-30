@@ -16,16 +16,16 @@ import SwiperCore, {
 SwiperCore.use([Pagination, Navigation]);
 
 
-export default function Carousal({poster1, poster2, poster3, poster4, poster5, poster6, url1}) {
+export default function Carousal({poster1, poster2, poster3, poster4, poster5, poster6, url1, url2, url3, url4, url5, url6}) {
   return (
     <>
-    <Swiper slidesPerView={3} spaceBetween={12} centeredSlides={false} navigation={true}  className="" style={{ '--swiper-navigation-color': 'white' }}>
-  <SwiperSlide><a href={url1}><img className="rounded-md" src={poster1}></img></a></SwiperSlide>
-  <SwiperSlide><img className="rounded-md" src={poster2}></img></SwiperSlide>
-  <SwiperSlide><img className="rounded-md" src={poster3}></img></SwiperSlide>
-  <SwiperSlide><img className="rounded-md" src={poster4}></img></SwiperSlide>
-  <SwiperSlide><img className="rounded-md" src={poster5}></img></SwiperSlide>
-  <SwiperSlide><img className="rounded-md" src={poster6}></img></SwiperSlide>
+    <Swiper slidesPerView={4} spaceBetween={0} centeredSlides={false} navigation={true}  className="" style={{ '--swiper-navigation-color': 'white' }}>
+  <SwiperSlide><a href={url1}><img className="rounded-md max-w-3/4" src={poster1}></img></a></SwiperSlide>
+  <SwiperSlide><a href={url2}><img className="rounded-md max-w-3/4" src={poster2}></img></a></SwiperSlide>
+  <SwiperSlide><a href={url3}><img className="rounded-md max-w-3/4" src={poster3}></img></a></SwiperSlide>
+  <SwiperSlide><a href={url4}><img className="rounded-md max-w-3/4" src={poster4}></img></a></SwiperSlide>
+  <SwiperSlide><a href={url5}><img className="rounded-md max-w-3/4" src={poster5}></img></a></SwiperSlide>
+  <SwiperSlide><a href={url6}><img className="rounded-md max-w-3/4" src={poster6}></img></a></SwiperSlide>
   </Swiper>
     </>
   )
