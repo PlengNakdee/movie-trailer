@@ -7,7 +7,7 @@ import { random } from "../components/RandNum";
 import { getData } from "../sanity_api/api";
 
 const Home = ({dataset}) => {
-  const nums = random();
+  const nums = random(13);
   return (
     <div className="min-h-screen bg-black text-white w-full mx-auto">
       <Head>
@@ -66,14 +66,6 @@ export async function getStaticProps() {
     }
   }
 };
-
-// export function random() {
-//   const nums = new Set();
-// while(nums.size !== 13) {
-//   nums.add(Math.floor(Math.random() * 13) + 1);
-// }
-// return [...nums];
-// }
 
 export default Home;
 

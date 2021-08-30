@@ -5,8 +5,9 @@ import { getAllSlugs } from "../../sanity_api/api";
 import sanity from "../../sanity_api/sanity";
 import BlockContent from '@sanity/block-content-to-react'
 import OtherTitles from "../../components/OtherTitles";
+import { random } from "../../components/RandNum";
 
-const Movie = ({movie}) => {
+const Movie = ({movie, others}) => {
     const serializer = {
         types: {
           code: (props) => (
@@ -16,6 +17,7 @@ const Movie = ({movie}) => {
           ),
         },
       }
+      const nums = random();
   return (
     <div className="min-h-screen bg-black text-white 2xl:max-w-7xl 2xl:mx-auto">
       <div>
@@ -33,7 +35,11 @@ const Movie = ({movie}) => {
               </div>
               
             </div>
-            <OtherTitles />
+            <OtherTitles num1={others[nums[0]].title} url1={`/movies/${others[nums[0]].slug}`}
+            num2={others[nums[1]].title} url2={`/movies/${others[nums[1]].slug}`}
+            num3={others[nums[2]].title} url3={`/movies/${others[nums[2]].slug}`}
+            num4={others[nums[3]].title} url1={`/movies/${others[nums[3]].slug}`}
+            />
           </div>
         </div>
       </div>
@@ -65,7 +71,14 @@ const singlePageQuery = `*[_type == "movie" && slug == $slug] {
     slug,
 }[0]`;
 
+const otherTitles = `*[_type == "movie" && slug != $slug] {
+  "id": _id,
+  title,
+  slug,
+}`;
+
 export const getStaticProps = async ({ params }) => {
-  const movie = await sanity.fetch(singlePageQuery, { slug: params.slug});
-  return { props: { movie } };
+  const movie = await sanity.fetch(singlePageQuery, { slug: params.slug });
+  const others = await sanity.fetch(otherTitles, { slug: params.slug }); 
+  return { props: { movie, others } };
 };

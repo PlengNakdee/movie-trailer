@@ -1,7 +1,7 @@
-export function random() {
+export function random(num) {
     const nums = new Set();
-  while(nums.size !== 13) {
-    nums.add(Math.floor(Math.random() * 13) + 1);
+  while(nums.size !== num) {
+    nums.add(Math.floor(Math.random() * num) + 1);
   }
   return [...nums];
   }
