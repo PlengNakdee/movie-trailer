@@ -20,12 +20,12 @@ export default function Carousal({poster1, poster2, poster3, poster4, poster5, p
   return (
     <>
     <Swiper slidesPerView={4} spaceBetween={0} centeredSlides={false} navigation={true}  className="" style={{ '--swiper-navigation-color': 'white' }}>
-  <SwiperSlide><a href={url1}><img className="rounded-md max-w-3/4" src={poster1}></img></a></SwiperSlide>
-  <SwiperSlide><a href={url2}><img className="rounded-md max-w-3/4" src={poster2}></img></a></SwiperSlide>
-  <SwiperSlide><a href={url3}><img className="rounded-md max-w-3/4" src={poster3}></img></a></SwiperSlide>
-  <SwiperSlide><a href={url4}><img className="rounded-md max-w-3/4" src={poster4}></img></a></SwiperSlide>
-  <SwiperSlide><a href={url5}><img className="rounded-md max-w-3/4" src={poster5}></img></a></SwiperSlide>
-  <SwiperSlide><a href={url6}><img className="rounded-md max-w-3/4" src={poster6}></img></a></SwiperSlide>
+  <SwiperSlide><a href={url1}><img className="rounded-md max-w-3/4" src={poster1} alt="movie poster"></img></a></SwiperSlide>
+  <SwiperSlide><a href={url2}><img className="rounded-md max-w-3/4" src={poster2} alt="movie poster"></img></a></SwiperSlide>
+  <SwiperSlide><a href={url3}><img className="rounded-md max-w-3/4" src={poster3} alt="movie poster"></img></a></SwiperSlide>
+  <SwiperSlide><a href={url4}><img className="rounded-md max-w-3/4" src={poster4} alt="movie poster"></img></a></SwiperSlide>
+  <SwiperSlide><a href={url5}><img className="rounded-md max-w-3/4" src={poster5} alt="movie poster"></img></a></SwiperSlide>
+  <SwiperSlide><a href={url6}><img className="rounded-md max-w-3/4" src={poster6} alt="movie poster"></img></a></SwiperSlide>
   </Swiper>
     </>
   )

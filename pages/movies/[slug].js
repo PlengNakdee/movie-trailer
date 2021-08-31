@@ -22,10 +22,12 @@ const Movie = ({ movies }) => {
       <div>
         <Header />
         <div className="p-20">
-          <div className="grid justify-items-center space-y-10">
+          <div className="grid justify-items-center space-y-10 pt-4">
             <div classsName="space-y-4">
-              <p>add year</p>
+              <div className="grid">
               <p className="text-xl font-bold">{movies.movie.title}</p>
+              <p className="text-xl font-bold">({movies.movie.releaseDate.slice(0,4)})</p>
+              </div>
               <div className="relative pt-8 pb-20 sm:pb-96">
                 <YoutubeEmbed embedId={movies.movie.youtubeId} />
               </div>
@@ -38,7 +40,33 @@ const Movie = ({ movies }) => {
             </div>
             <div className="grid justify-items-center">
               <p className="text-lg font-bold">Recommendations: </p>
-              <div className="flex space-x-4 font-semibold text-white">
+              <div className="grid font-semibold text-white sm:hidden">
+                <a
+                  href={`/movies/${movies.others[nums[0]].slug}`}
+                  className="hover:text-red-500"
+                >
+                  {movies.others[nums[0]].title}
+                </a>
+                <a
+                  href={`/movies/${movies.others[nums[1]].slug}`}
+                  className="hover:text-red-500"
+                >
+                  {movies.others[nums[1]].title}
+                </a>
+                <a
+                  href={`/movies/${movies.others[nums[2]].slug}`}
+                  className="hover:text-red-500"
+                >
+                  {movies.others[nums[2]].title}
+                </a>
+                <a
+                  href={`/movies/${movies.others[nums[3]].slug}`}
+                  className="hover:text-red-500"
+                >
+                  {movies.others[nums[3]].title}
+                </a>
+              </div>
+              <div className="hidden sm:flex space-x-4 font-semibold text-white">
                 <a
                   href={`/movies/${movies.others[nums[0]].slug}`}
                   className="hover:text-red-500"
@@ -102,6 +130,7 @@ const titlesQuery = `{'movie': *[_type == 'movie' && slug == $slug]{"id": _id,
 title,
 overview,
 youtubeId,
+releaseDate,
 slug}[0], 'others': *[_type == 'movie' && slug != $slug]{"id": _id,
 title,
 slug}}`;

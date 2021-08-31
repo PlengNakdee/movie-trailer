@@ -1,11 +1,11 @@
-import { PlayIcon } from "@heroicons/react/solid";
+// import { PlayIcon } from "@heroicons/react/solid";
 
-const ImageBanner = ({poster}) => {
-    return (
-        <div>
-            <div className="">
-            <img className="object-cover mx-auto" src={poster} />
-                {/* <figure className="">
+const ImageBanner = ({ poster }) => {
+  return (
+    <div>
+      <div className="">
+        <img className="object-cover mx-auto" src={poster} alt={poster} />
+        {/* <figure className="">
                     <figcaption className="absolute -mt-24 ml-4 sm:-mt-80 sm:ml-10 space-y-2">
                         <div className="">
                             <p className="text-white text-lg sm:text-5xl">Title</p>
@@ -15,10 +15,10 @@ const ImageBanner = ({poster}) => {
                             <p>Play</p>
                         </div>
                     </figcaption>
-                </figure> */}              
-            </div>
-        </div>
-    )
+                </figure> */}
+      </div>
+    </div>
+  );
 };
 
-export default ImageBanner
+export default ImageBanner;
